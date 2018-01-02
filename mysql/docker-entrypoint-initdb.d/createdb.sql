@@ -25,4 +25,25 @@
 #CREATE DATABASE IF NOT EXISTS `dev_db_3` COLLATE 'utf8_general_ci' ;
 #GRANT ALL ON `dev_db_3`.* TO 'default'@'%' ;
 
+GRANT ALL ON *.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS obviux;
+GRANT ALL ON obviux.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS cubs;
+GRANT ALL ON cubs.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS bankhub;
+GRANT ALL ON bankhub.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS gas;
+GRANT ALL ON gas.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS heating_service;
+GRANT ALL ON heating_service.* TO 'obviux'@'%';
+
+# needed?
+CREATE DATABASE IF NOT EXISTS sap_export;
+GRANT ALL ON sap_export.* TO 'obviux'@'%';
+
 FLUSH PRIVILEGES ;

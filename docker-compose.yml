@@ -6,6 +6,8 @@ services:
 
     applications:
       image: tianon/true
+      volumes:
+        - ${APPLICATION}:/var/www
 
 ### Workspace Utilities Container ###########################
 
@@ -198,8 +200,7 @@ services:
     minio:
       build: ./minio
       volumes:
-        - ${DATA_SAVE_PATH}/minio/data:/export
-        - ${DATA_SAVE_PATH}/minio/config:/root/.minio
+        - minio:/export
       ports:
         - "${MINIO_PORT}:9000"
       environment:
@@ -207,7 +208,6 @@ services:
         - MINIO_SECRET_KEY=secretkey
       networks:
         - frontend
-        - backend
 
 ### MySQL Container #########################################
 
@@ -485,7 +485,7 @@ services:
       ports:
         - "5050:5050"
       volumes:
-        - ${DATA_SAVE_PATH}/pgadmin-backup:/var/lib/pgadmin/storage/pgadmin4
+        - ${DATA_SAVE_PATH}/pgadmin-backup:/var/lib/pgadmin4/data/storage/pgadmin4
       depends_on:
         - postgres
       networks:
@@ -616,9 +616,9 @@ services:
       networks:
         - frontend
 
-### HAProxy Load Balancer ####################################
+### Balancer Haproxy ##########################################
 
-    haproxy:
+    balancer:
       build: ./haproxy
       ports:
         - "${HAPROXY_HOST_HTTP_PORT}:8085"

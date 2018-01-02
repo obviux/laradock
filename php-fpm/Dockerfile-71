@@ -12,7 +12,7 @@
 # Note: Base Image name format {image-tag}-{php-version}
 #
 
-FROM laradock/php-fpm:2.0-71
+FROM laradock/php-fpm:1.4-71
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
@@ -330,16 +330,37 @@ ARG INSTALL_IMAGEMAGICK=false
 ENV INSTALL_IMAGEMAGICK ${INSTALL_IMAGEMAGICK}
 RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
     apt-get update -y && \
-    apt-get install -y libmagickwand-dev imagemagick && \ 
+    apt-get install -y libmagickwand-dev imagemagick && \
     pecl install imagick && \
     docker-php-ext-enable imagick \
 ;fi
+
+#####################################
+# IMAP:
+#####################################
+RUN apt-get update && apt-get install -y libc-client-dev libkrb5-dev && rm -r /var/lib/apt/lists/*
+RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+    && docker-php-ext-install imap
 
 #
 #--------------------------------------------------------------------------
 # Final Touch
 #--------------------------------------------------------------------------
 #
+
+RUN docker-php-ext-install calendar
+
+RUN apt-get update \
+    && apt-get install -y \
+        pdftohtml \
+        locales
+
+# Language packs?
+RUN sed -i 's/^# *\(da_DK.UTF-8 UTF-8\)/\1/' /etc/locale.gen \
+    && sed -i 's/^# *\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen \
+    && locale-gen
+
+ADD init.sh /init.sh
 
 ADD ./laravel.ini /usr/local/etc/php/conf.d
 ADD ./xlaravel.pool.conf /usr/local/etc/php-fpm.d/
@@ -350,6 +371,6 @@ RUN usermod -u 1000 www-data
 
 WORKDIR /var/www
 
-CMD ["php-fpm"]
+CMD /init.sh
 
 EXPOSE 9000
