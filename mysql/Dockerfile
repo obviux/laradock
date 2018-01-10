@@ -1,5 +1,5 @@
-ARG MYSQL_VERSION=8.0
-FROM mysql:${MYSQL_VERSION}
+#ARG MYSQL_VERSION=8.0
+FROM mysql:5.6
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
