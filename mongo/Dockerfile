@@ -1,4 +1,4 @@
-FROM mongo:3.2.18
+FROM mongo:3.4.10
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
