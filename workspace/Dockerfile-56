@@ -593,6 +593,8 @@ RUN apt-get update && apt-get install -y \
     mongodb-clients \
     pdftohtml
 
+RUN pip install awscli
+
 RUN locale-gen da_DK.UTF-8 && apt-get install -y language-pack-da
 
 # Clean up
