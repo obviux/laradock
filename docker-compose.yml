@@ -55,7 +55,7 @@ services:
       volumes_from:
         - applications
       volumes:
-        - ~/.aws:/root/.aws
+        - ~/.aws:/home/laradock/.aws
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       ports:
