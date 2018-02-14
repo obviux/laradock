@@ -601,7 +601,7 @@ RUN pip install awscli
 RUN locale-gen da_DK.UTF-8 && apt-get install -y language-pack-da
 
 USER laradock
-RUN composer config -g github-oauth.github.com 3caf745d0c53ca7e31a8a15d4e86f2d3959b5511
+RUN composer config -g github-oauth.github.com 9dc9fbbd5a63dc8b4e3debd523df42387490857a
 
 # Clean up
 USER root
