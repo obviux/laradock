@@ -82,7 +82,6 @@ alias ccr='codecept run'
 alias ccu='codecept run unit'
 alias ccf='codecept run functional'
 
-alias g="gulp"
 alias npm-global="npm list -g --depth 0"
 alias ra="reload"
 alias reload="source ~/.aliases && echo \"$COL_GREEN ==> Aliases Reloaded... $COL_RESET \n \""
@@ -102,11 +101,18 @@ alias pv="package-version"
 alias lv="latest-version"
 
 # git aliases
+alias g="git"
 alias gaa="git add ."
 alias gd="git --no-pager diff"
 alias git-revert="git reset --hard && git clean -df"
 alias gs="git status"
 alias whoops="git reset --hard && git clean -df"
+
+# mysql aliases
+alias mysql-cli="mysql -hmysql -uobviux -psecret -Dobviux"
+
+# mongo
+alias mongo-cli="mongo --host mongo"
 
 # Create a new directory and enter it
 function mkd() {
