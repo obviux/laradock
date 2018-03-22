@@ -2,7 +2,7 @@ FROM mongo:3.4.10
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
-#COPY mongo.conf /usr/local/etc/mongo/mongo.conf
+#COPY ./mongod.conf /etc/mongod.conf
 
 VOLUME /data/db /data/configdb
 
