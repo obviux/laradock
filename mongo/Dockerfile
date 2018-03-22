@@ -6,7 +6,7 @@ MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
 VOLUME /data/db /data/configdb
 
-CMD ["mongod"]
+CMD ["mongod", "-f", "/etc/mongod.conf"]
 
 EXPOSE 27017
 
