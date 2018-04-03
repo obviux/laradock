@@ -335,7 +335,6 @@ services:
         - "${MONGODB_PORT}:27017"
       volumes:
         - ${DATA_SAVE_PATH}/mongo:/data/db
-        - ${MONGO_CONF_PATH}:/etc/mongod.conf
       networks:
         - backend
 
