@@ -42,6 +42,9 @@ GRANT ALL ON gas.* TO 'obviux'@'%';
 CREATE DATABASE IF NOT EXISTS heating_service;
 GRANT ALL ON heating_service.* TO 'obviux'@'%';
 
+CREATE DATABASE IF NOT EXISTS communication;
+GRANT ALL ON communication.* TO 'obviux'@'%';
+
 # needed?
 CREATE DATABASE IF NOT EXISTS sap_export;
 GRANT ALL ON sap_export.* TO 'obviux'@'%';
