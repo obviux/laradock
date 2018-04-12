@@ -572,14 +572,16 @@ services:
 
 ### Selenium Container ########################################
 
-    #selenium:
-      #build: ./selenium
-      #ports:
-        #- "${SELENIUM_PORT}:4444"
-      #volumes:
-        #- /dev/shm:/dev/shm
-      #networks:
-        #- frontend
+    selenium:
+      build: ./selenium
+      ports:
+        - "${SELENIUM_PORT}:4444"
+      volumes:
+        - /dev/shm:/dev/shm
+      shm_size: "512MB"
+      privileged: true
+      networks:
+        - frontend
 
 ### Varnish Proxy 1 ##########################################
 
