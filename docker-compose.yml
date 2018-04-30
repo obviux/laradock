@@ -501,17 +501,16 @@ services:
     elasticsearch:
       build: ./elasticsearch
       volumes:
-        - elasticsearch-data:/usr/share/elasticsearch/data
-        - elasticsearch-plugins:/usr/share/elasticsearch/plugins
+        - elasticsearch:/usr/share/elasticsearch/data
+        - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
       environment:
         - cluster.name=laradock-cluster
         - bootstrap.memory_lock=true
-        - "ES_JAVA_OPTS=-Xms750m -Xmx750m"
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       ulimits:
         memlock:
           soft: -1
           hard: -1
-      mem_limit: 2048m
       ports:
         - "${ELASTICSEARCH_HOST_HTTP_PORT}:9200"
         - "${ELASTICSEARCH_HOST_TRANSPORT_PORT}:9300"
@@ -524,15 +523,17 @@ services:
 
 ### Kibana Container #######################################
 
-    #kibana:
-      #build: ./kibana
-      #ports:
-        #- "${KIBANA_HTTP_PORT}:5601"
-      #depends_on:
-        #- elasticsearch
-      #networks:
-        #- frontend
-        #- backend
+    kibana:
+      build: ./kibana
+      volumes:
+        - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+      ports:
+        - "${KIBANA_HTTP_PORT}:5601"
+      depends_on:
+        - elasticsearch
+      networks:
+        - frontend
+        - backend
 
 ### Certbot Container ##################################
 
@@ -729,7 +730,5 @@ volumes:
     driver: "local"
   caddy:
     driver: "local"
-  elasticsearch-data:
-    driver: "local"
-  elasticsearch-plugins:
+  elasticsearch:
     driver: "local"
