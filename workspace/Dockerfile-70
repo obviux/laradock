@@ -671,9 +671,10 @@ RUN if [ ${INSTALL_DUSK_DEPS} = true ]; then \
   && rm chromedriver_linux64.zip \
 ;fi
 
+# SCRYPT
 USER root
-    RUN pecl install scrypt \
-    && echo "extension=scrypt.so" >> /etc/php/5.6/cli/php.ini
+RUN pecl install scrypt && \
+    echo "extension=scrypt.so" >> /etc/php/5.6/cli/php.ini
 
 #
 #--------------------------------------------------------------------------
