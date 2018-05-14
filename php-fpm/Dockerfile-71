@@ -39,6 +39,18 @@ MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 #
 
 #####################################
+# SCRYPT:
+#####################################
+
+ARG INSTALL_SCRYPT=false
+RUN if [ ${INSTALL_SCRYPT} = true ]; then \
+    # Install the scrypt extension
+    pecl install scrypt \
+    docker-php-ext-enable scrypt \
+
+;fi
+
+#####################################
 # SOAP:
 #####################################
 
