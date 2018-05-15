@@ -331,6 +331,7 @@ services:
 
     mongo:
       build: ./mongo
+      command: "--smallfiles"
       ports:
         - "${MONGODB_PORT}:27017"
       volumes:
