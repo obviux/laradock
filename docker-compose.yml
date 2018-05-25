@@ -580,6 +580,7 @@ services:
       volumes:
         - /dev/shm:/dev/shm
       shm_size: "512MB"
+      mem_limit: 1024m
       privileged: true
       networks:
         - frontend
