@@ -70,6 +70,8 @@ alias refresh="php artisan migrate:refresh"
 alias rollback="php artisan migrate:rollback"
 alias seed="php artisan:seed"
 alias serve="php artisan serve --quiet &"
+alias tinker="php artisan tinker"
+alias tkr="php artisan tinker"
 
 alias phpunit="./vendor/bin/phpunit"
 alias pu="phpunit"
