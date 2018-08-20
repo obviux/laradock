@@ -48,6 +48,9 @@ GRANT ALL ON communication.* TO 'obviux'@'%';
 CREATE DATABASE IF NOT EXISTS datahub;
 GRANT ALL ON datahub.* TO 'obviux'@'%';
 
+CREATE DATABASE IF NOT EXISTS geomatic;
+GRANT ALL ON geomatic.* TO 'obviux'@'%';
+
 # needed?
 CREATE DATABASE IF NOT EXISTS sap_export;
 GRANT ALL ON sap_export.* TO 'obviux'@'%';
