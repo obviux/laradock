@@ -58,4 +58,35 @@ GRANT ALL ON sap_export.* TO 'obviux'@'%';
 CREATE DATABASE IF NOT EXISTS sap_export_P01_EXTR201806230001_XEMOL_NEMO;
 GRANT ALL ON sap_export_P01_EXTR201806230001_XEMOL_NEMO.* TO 'obviux'@'%';
 
+CREATE DATABASE IF NOT EXISTS obviux_test;
+GRANT ALL ON obviux_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS cubs_test;
+GRANT ALL ON cubs_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS bankhub_test;
+GRANT ALL ON bankhub_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS gas_test;
+GRANT ALL ON gas_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS heating_service_test;
+GRANT ALL ON heating_service_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS communication_test;
+GRANT ALL ON ccommunication_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS datahub_test;
+GRANT ALL ON datahub_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS geomatic_test;
+GRANT ALL ON geomatic_test.* TO 'obviux'@'%';
+
+# needed?
+CREATE DATABASE IF NOT EXISTS sap_export_test;
+GRANT ALL ON sap_export_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS sap_export_P01_EXTR201806230001_XEMOL_NEMO_test;
+GRANT ALL ON sap_export_P01_EXTR201806230001_XEMOL_NEMO_test.* TO 'obviux'@'%';
+
 FLUSH PRIVILEGES ;
