@@ -74,7 +74,7 @@ CREATE DATABASE IF NOT EXISTS heating_service_test;
 GRANT ALL ON heating_service_test.* TO 'obviux'@'%';
 
 CREATE DATABASE IF NOT EXISTS communication_test;
-GRANT ALL ON ccommunication_test.* TO 'obviux'@'%';
+GRANT ALL ON communication_test.* TO 'obviux'@'%';
 
 CREATE DATABASE IF NOT EXISTS datahub_test;
 GRANT ALL ON datahub_test.* TO 'obviux'@'%';
