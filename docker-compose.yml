@@ -53,9 +53,7 @@ services:
       volumes_from:
         - applications
       volumes:
-        - ~/.aws:/home/laradock/.aws
-        - ~/.composer/auth.json:/home/laradock/.composer/auth.json
-        - ~/.nemo/.bash_history:/home/laradock/.bash_history
+        - ${HOME}/.aws/:/home/laradock/.aws/
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       ports:
