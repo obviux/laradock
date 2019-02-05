@@ -58,6 +58,9 @@ GRANT ALL ON sap_export.* TO 'obviux'@'%';
 CREATE DATABASE IF NOT EXISTS sap_export_P01_EXTR201806230001_XEMOL_NEMO;
 GRANT ALL ON sap_export_P01_EXTR201806230001_XEMOL_NEMO.* TO 'obviux'@'%';
 
+CREATE DATABASE IF NOT EXISTS debtorhub;
+GRANT ALL ON geomatic_test.* TO 'obviux'@'%';
+
 CREATE DATABASE IF NOT EXISTS obviux_test;
 GRANT ALL ON obviux_test.* TO 'obviux'@'%';
 
@@ -88,5 +91,8 @@ GRANT ALL ON sap_export_test.* TO 'obviux'@'%';
 
 CREATE DATABASE IF NOT EXISTS sap_export_P01_EXTR201806230001_XEMOL_NEMO_test;
 GRANT ALL ON sap_export_P01_EXTR201806230001_XEMOL_NEMO_test.* TO 'obviux'@'%';
+
+CREATE DATABASE IF NOT EXISTS debtorhub_test;
+GRANT ALL ON geomatic_test.* TO 'obviux'@'%';
 
 FLUSH PRIVILEGES ;
