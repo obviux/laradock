@@ -1,4 +1,4 @@
-version: '2'
+version: '2.4'
 
 services:
 
@@ -53,9 +53,10 @@ services:
       volumes_from:
         - applications
       volumes:
-        - ~/.aws:/home/laradock/.aws
-        - ~/.composer/auth.json:/home/laradock/.composer/auth.json
-        - ~/.nemo/.bash_history:/home/laradock/.bash_history
+        - $YOUR_HOME/.aws/:/home/laradock/.aws/
+        - type: bind
+          source: $YOUR_HOME/.composer/auth.json
+          target: /home/laradock/.composer/auth.json
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       ports:
