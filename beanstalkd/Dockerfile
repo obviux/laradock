@@ -14,4 +14,4 @@ COPY ./beanstalkd /etc/default/beanstalkd
 
 EXPOSE 11300
 
-CMD ["/usr/bin/beanstalkd"]
+CMD ["/usr/bin/beanstalkd -z 5242880"]
