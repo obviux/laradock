@@ -586,6 +586,14 @@ services:
       networks:
         - frontend
 
+    sftp:
+      image: atmoz/sftp
+      container_name: sftp
+      command: user1:pass1:::debt_collection
+      networks:
+        - frontend
+        - backend
+
 ### Varnish Proxy 1 ##########################################
 
     #proxy:
