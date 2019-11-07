@@ -332,7 +332,10 @@ services:
 
     mongo:
       build: ./mongo
-      command: "--smallfiles"
+      command: "--smallfiles --auth"
+      environment:
+        - MONGO_INITDB_ROOT_USERNAME=obviux
+        - MONGO_INITDB_ROOT_PASSWORD=SUPER_SECRET_PASSWORD
       ports:
         - "${MONGODB_PORT}:27017"
       volumes:
